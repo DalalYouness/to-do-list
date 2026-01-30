@@ -25,6 +25,8 @@ body {
   width: 100%;
   max-width: 500px;
   animation: slideIn 0.5s ease-out;
+  border: rgb(84, 49, 212) 2px solid;
+  box-shadow: 5px 5px 10px rgb(61, 36, 151);
 }
 
 @keyframes slideIn {
@@ -231,6 +233,9 @@ body {
 .delete-button:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 12px rgba(255, 107, 107, 0.4);
+  color: #ee5a6f;
+  background: white;
+  border: #ee5a6f 1px solid;
 }
 
 .edit-button {
@@ -242,6 +247,9 @@ body {
 .edit-button:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 12px rgba(78, 205, 196, 0.4);
+  color: #44a3a0;
+  background: white;
+  border: #44a3a0 1px solid;
 }
 
 .action-button:active {
@@ -319,3 +327,5 @@ body {
     padding: 12px 15px;
   }
 }
+
+/* ============ styling title ================= */

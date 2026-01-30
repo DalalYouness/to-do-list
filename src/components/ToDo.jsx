@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPen } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 const ToDo = ({ onHandleDelete, onHandleComplete, todo }) => {
@@ -7,23 +9,27 @@ const ToDo = ({ onHandleDelete, onHandleComplete, todo }) => {
       onClick={() => onHandleComplete(todo.id)}
     >
       <p className="todo-text">{todo.task}</p>
+
       <div className="todo-actions">
         <button
           className="action-button delete-button"
+          title="Supprimer la tâche"
           onClick={(e) => {
             e.stopPropagation();
             onHandleDelete(todo.id);
           }}
         >
-          delete
+          <FontAwesomeIcon icon={faTrash} />
         </button>
+
         <button
           className="action-button edit-button"
+          title="Modifier la tâche"
           onClick={(e) => {
             e.stopPropagation();
           }}
         >
-          edit
+          <FontAwesomeIcon icon={faPen} />
         </button>
       </div>
     </div>
