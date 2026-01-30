@@ -16,13 +16,23 @@ const ToDoWrapper = () => {
     ]);
   };
 
+  const handleComplete = (id) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, isCompleted: !todo.isCompleted };
+      }
+      return todo;
+    });
+    settodos(updatedTodos);
+  };
+
   return (
     <div>
       <h1>To-Do List</h1>
       {console.table(todos)}
       <ToDoForm onAddToDo={handleAddTask} />
       {todos.map((todo) => (
-        <ToDo key={todo.id} todo={todo} />
+        <ToDo onHandleComplete={handleComplete} key={todo.id} todo={todo} />
       ))}
     </div>
   );

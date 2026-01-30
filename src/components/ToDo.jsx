@@ -1,6 +1,6 @@
 import React from "react";
 
-const ToDo = ({ todo }) => {
+const ToDo = ({ todo, onHandleComplete }) => {
   const styleTask = {
     textDecoration: todo.isCompleted ? "line-through" : "none",
     border: "1px solid black",
@@ -27,7 +27,9 @@ const ToDo = ({ todo }) => {
     <div style={styleTask}>
       <p>{todo.task}</p>
       <div>
-        <button style={styleButtons}>complete</button>
+        <button style={styleButtons} onClick={() => onHandleComplete(todo.id)}>
+          complete
+        </button>
         <button style={styleButtons}>edit</button>
       </div>
     </div>
