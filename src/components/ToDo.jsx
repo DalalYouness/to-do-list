@@ -1,13 +1,9 @@
 import React from "react";
 
-const ToDo = ({ todos }) => {
+const ToDo = ({ todo }) => {
   return (
     <div>
-      {todos.map((todo) => (
-        <div key={todo.id}>
-          <h3>{todo.task}</h3>
-        </div>
-      ))}
+      <p>{todo.task}</p>
     </div>
   );
 };

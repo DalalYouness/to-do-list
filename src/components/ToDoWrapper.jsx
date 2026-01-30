@@ -21,7 +21,9 @@ const ToDoWrapper = () => {
       <h1>To-Do List</h1>
       {console.table(todos)}
       <ToDoForm onAddToDo={handleAddTask} />
-      <ToDo todos={todos} />
+      {todos.map((todo) => (
+        <ToDo key={todo.id} todo={todo} />
+      ))}
     </div>
   );
 };
