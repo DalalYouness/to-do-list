@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPen } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-const ToDo = ({ onHandleDelete, onHandleComplete, todo }) => {
+const ToDo = ({ onHandleDelete, onHandleComplete, onHandleEdit, todo }) => {
   return (
     <div
       className={`todo-item ${todo.isCompleted ? "completed" : ""}`}
@@ -27,6 +27,7 @@ const ToDo = ({ onHandleDelete, onHandleComplete, todo }) => {
           title="Modifier la tâche"
           onClick={(e) => {
             e.stopPropagation();
+            onHandleEdit(todo);
           }}
         >
           <FontAwesomeIcon icon={faPen} />
